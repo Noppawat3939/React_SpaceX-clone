@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+nav {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: .3s ease-in;
+    width: 100%;
+    background: transparent;
+    height: 6rem;
+    padding: 4rem;
+    overflow: hidden;
+    z-index: 10;
+}
+nav.scroll-down {
+    top: -100%;
+}
+nav.scroll-up {
+    top: 0;
+}
+nav.scroll-up .nav-bg {
+    background: #000;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, .15);
+    top: 0;
+}
+.nav-bg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: .3s;
+    transition-delay: .4s;
+    left: 0;
+    top: -100%;
+    z-index: -1;
+}
+.nav-left,
+.nav-right {
+    display: flex;
+    column-gap: 1.5rem;
+    align-items: center;
+    height: 100%;
+}
+.nav-left .nav-logo .logo {
+    height: 15rem;
+    transform: translateY(-.5rem);
+}
+.nav-menu {
+    display: flex;
+    column-gap: 2rem;
+}
+.nav-left .nav-menu ul li a,
+.nav-right .nav-menu a {
+    color: #fff;
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 5px;
+}
+.nav-left .nav-menu ul li a::after,
+.nav-right .nav-menu a::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    transform-origin: bottom right;
+    transition: transform .3s ease-in;
+    transform: scaleX(0);
+}
+.nav-left .nav-menu ul li:hover a::after,
+.nav-right .nav-menu li:hover a::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+.bars-btn {
+    background: 0;
+    z-index: 10;
+    width: 20px;
+    height: 20px;
+}
+.bars-btn.active #bar1 {
+    transform: rotate(45deg) translateY(3px);
+    transition: .3s all;
+}
+.bars-btn.active #bar2 {
+    display: none;
+}
+.bars-btn.active #bar3 {
+    transform: rotate(-45deg) translateY(-3px);
+    transition: .3s all;
+}
+.bars-btn .bar {
+    width: 100%;
+    background: #fff;
+    height: 2px;
+    display: block;
+    margin: 3px 0;
+}
+.sidebar-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    background: rgba(0, 0, 0, .5);
+    transform: translateX(100%);
+}
+.sidebar-container.show {
+    transition: .4s all;
+    transform:  translateX(0);
+}
+.sidebar-links {
+    background: #000;
+    width: 350px;
+    padding: 6rem 4rem;
+}
+.sidebar-links li {
+    border-bottom: 1px solid rgba(255,255,255,.12);
+    text-align: end;
+    margin-bottom: 5px;
+    padding: 10px 0;
+    transition: .4s;
+}
+.sidebar-links .secondary {
+    display: none;
+}
+.sidebar-links li a {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 15px;
+}
+.sidebar-links li:hover {
+    opacity: .5;
+}
+
+@media screen and (max-width: 1100px) {
+    nav {
+      padding: 0 2rem;
+    }
+    .nav-left {
+        column-gap: 0;
+    }
+    .nav-left .nav-logo .logo {
+        height: 10rem;
+    }    
+    .nav-menu {
+        column-gap: 1.5rem;
+    }    
+  }
+  @media screen and (max-width: 970px) {
+    nav {
+        height: 5rem;
+        padding:  2rem;
+        width: 100%;
+    }
+    .nav-left {
+        width: 100%;
+        justify-content: center;
+    }
+    .nav-left .nav-logo .logo {
+        height: 10rem;
+    }
+    .nav-left .nav-menu,
+    .nav-right .nav-menu {
+        display: none;
+    }
+    .bars-btn {
+        position: absolute;
+        right: 2rem;
+    }
+    .sidebar-links .secondary {
+        display: block;
+    }    
+  }

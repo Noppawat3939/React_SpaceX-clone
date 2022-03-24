@@ -1,0 +1,114 @@
+.starship-bg {
+    background: url('../image/starship-desktop.webp');
+    max-width: 100%;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+.mission-bg {
+    max-width: 100%;
+    background: url('../image/HOMEPAGE-MOBILE_NROL-87.webp');
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+.landnasa-bg {
+    max-width: 100%;
+    background: url('../image/footer-pc.webp') no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+.wrapper {
+    height: 100%;
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+}
+.section-inner {
+    color: #fff;
+    text-transform: uppercase;
+    position: absolute;
+    left: 0;
+    bottom: 6rem;
+    width: 40%;
+    word-wrap: break-word;
+}
+.section-inner h4 {
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    text-shadow: 0 0 6px rgba(0, 0,0,.35);
+}
+.section-inner h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 0 6px rgba(0, 0,0,.15);
+}
+.section-inner .btn {
+    border: 2px solid #fff;
+    padding: 1.25rem 3rem;
+    display: inline-block;
+    color: #fff;
+    position: relative;
+    z-index: 2;
+    font-weight: 500;
+}
+.section-inner .btn span {
+    transition: color .4s;
+    text-shadow: 0 0 6px rgba(0, 0,0,.15);
+    font-size: 14px;
+    letter-spacing: -1px;
+}
+.section-inner .btn .hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    z-index: -1;
+    transform: scale3d(1,0,1);
+    transform-origin: top center; 
+    transition:  transform .4s;
+}
+.section-inner .btn:hover .hover {
+    transform: scale3d(1,1,1);
+    transform-origin: bottom center;
+}
+.section-inner .btn:hover span {
+    color: #000;
+}
+
+
+
+@media screen and (max-width: 600px) {
+    .section-inner {
+        width: 80%;
+    }
+}
+
+/*?------------ bg mobile  540px ----------*/
+@media screen and (max-width: 540px) {
+    .starship-bg {
+        background: url('../image/starship-mobile.webp') no-repeat;
+        background-position: center;
+        background-size: cover;
+    }    
+    .mission-bg {
+        background: url('../image/HOMEPAGE-MOBILE_NROL-87.webp') no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+    .landnasa-bg {
+        background: url('../image/footer-mobile.webp') no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+}
